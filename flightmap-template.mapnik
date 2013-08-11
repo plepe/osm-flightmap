@@ -72,9 +72,25 @@
 -->
 
 <!-- TEXTS -->
+# FOR COLORS COLOR
     <Rule>
-      <Filter>[text]</Filter>
-      <TextSymbolizer face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+      <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "0"</Filter>
+      <TextSymbolizer fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "13"</Filter>
+      <TextSymbolizer dy="13" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "17"</Filter>
+      <TextSymbolizer dy="17" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+    </Rule>
+# END
+
+<!-- POINTS -->
+    <Rule>
+      <Filter>[icon-image]</Filter>
+      <PointSymbolizer file="[icon-image]" allow-overlap="true" ignore-placement="true" />
     </Rule>
   </Style>
 

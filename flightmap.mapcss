@@ -18,6 +18,8 @@
   // not in MapCSS 0.2 standard:
   character-spacing: 0;
   wrap-character: " ";
+  icon-image: ;
+  text-offset: 0;
 }
 
 point|z5-8[place=city][population>10000000],
@@ -144,4 +146,29 @@ area|z9-[landuse=residential]::casing
   z-index: -28;
   color: #000000;
   width: 2;
+}
+
+node|z8-[aeroway=aerodrome][type=public],
+area|z8-[aeroway=aerodrome][type=public],
+node|z10-[aeroway=aerodrome],
+area|z10-[aeroway=aerodrome]
+{
+  icon-image: img/aerodrome.svg;
+  text: eval(tag(iata, icao, faa, ref));
+  font-size: 16;
+  text-color: #ff2aea;
+  text-halo-radius: 2;
+  text-offset: 17;
+  z-index: 200;
+}
+node|z12-[aeroway=helipad],
+area|z12-[aeroway=helipad]
+{
+  icon-image: img/helipad.svg;
+  text: eval(tag(iata, icao, faa, ref));
+  font-size: 16;
+  text-color: #ff2aea;
+  text-halo-radius: 2;
+  text-offset: 13;
+  z-index: 200;
 }
