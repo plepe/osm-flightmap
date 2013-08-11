@@ -172,3 +172,9 @@ area|z12-[aeroway=helipad]
   text-offset: 13;
   z-index: 200;
 }
+
+line[boundary=administrative][admin_level=2]
+{
+  color: #000097;
+  width: 3;
+}
