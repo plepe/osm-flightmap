@@ -20,9 +20,36 @@
   wrap-character: " ";
 }
 
-point|z9-[place=city] {
+point|z5-8[place=city][population>10000000],
+point|z6-9[place=city][population>1000000],
+point|z7-10[place=city],
+point|z9-12[place=town][population>50000],
+point|z10-13[place=town][population>10000],
+point|z11-14[place=town],
+point|z13-[place=village][population>1000],
+point|z13-[place=village]
+{
+  font-size: 16;
   text: eval(tag(name));
   text-halo-radius: 2;
+  text-halo-fill: #ffffff;	// Mapnik >= version 3.0 or branch harfbuzz
+
+  character-spacing: 1;
+  text-opacity: 0.7;
+
+  z-index: 101;
+}
+
+point|z9-12[place=city][population>10000000],
+point|z10-13[place=city][population>1000000],
+point|z11-14[place=city],
+point|z13-16[place=town][population>50000],
+point|z14-17[place=town][population>10000],
+point|z15-[place=town]
+{
+  font-size: 20;
+  text: eval(tag(name));
+  text-halo-radius: 3;
   text-halo-fill: #ffffff;	// Mapnik >= version 3.0 or branch harfbuzz
 
   character-spacing: 1;
@@ -31,8 +58,8 @@ point|z9-[place=city] {
   z-index: 100;
 }
 
-line|z9-[highway=motorway],
-line|z9-[highway=trunk],
+line|z7-[highway=motorway],
+line|z7-[highway=trunk],
 line|z9-[highway=motorway_link],
 line|z9-[highway=trunk_link]
 {
@@ -49,8 +76,8 @@ line|z9-[highway=secondary]
   color: #ff0000;
 }
 
-line|z9-[highway=motorway]::casing,
-line|z9-[highway=trunk]::casing,
+line|z7-[highway=motorway]::casing,
+line|z7-[highway=trunk]::casing,
 line|z9-[highway=motorway_link]::casing,
 line|z9-[highway=trunk_link]::casing
 {
@@ -84,6 +111,12 @@ area|z9-[natural=wood]
   z-index: -30;
 }
 
+line|z7-8[waterway=river]
+{
+  color: #0055ff;
+  width: 1;
+  z-index: -5;
+}
 line|z9-[waterway=river]
 {
   color: #0055ff;
@@ -91,8 +124,8 @@ line|z9-[waterway=river]
   z-index: -5;
 }
 
-area|z9-[natural=water],
-area|z9-[waterway=riverbank]
+area|z6-[natural=water],
+area|z6-[waterway=riverbank]
 {
   fill-color: #0055ff;
   z-index: -29;
