@@ -174,6 +174,15 @@ area|z12-[aeroway=helipad]
   text-offset: 13;
   z-index: 200;
 }
+node|z11-[man_made=beacon]
+{
+  icon-image: img/beacon.svg;
+  text: eval(tag(ref));
+  text-color: #ff5a00;
+  text-halo-radius: 1;
+  text-offset: 13;
+  z-index: 199;
+}
 
 line[boundary=administrative][admin_level=2]
 {
