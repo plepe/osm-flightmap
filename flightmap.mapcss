@@ -20,6 +20,7 @@
   wrap-character: " ";
   icon-image: ;
   text-offset: 0;
+  linecap: ;
 }
 
 point|z5-8[place=city][population>10000000],
@@ -68,6 +69,7 @@ line|z9-[highway=trunk_link]
   z-index: eval(10.01+any(number(tag(layer)), "0")*0.1);
   width: 3;
   color: #ffffff;
+  linecap: round;
 }
 
 line|z9-[highway=primary],

@@ -53,7 +53,15 @@
 <!-- LINES -->
 # FOR COLORS COLOR
     <Rule>
-      <Filter>[width] and [color] = 'COLOR'</Filter>
+      <Filter>[width] and [color] = 'COLOR' and [linecap] = 'round'</Filter>
+      <LineSymbolizer stroke="COLOR" stroke-width="[width]" stroke-linecap="round" />
+<!--
+* Mapnik branch stroke-width-expr: replace by
+      <LineSymbolizer stroke="COLOR" stroke-width="[width]" />
+-->
+    </Rule>
+    <Rule>
+      <Filter>[width] and [color] = 'COLOR' and [linecap] != 'round'</Filter>
       <LineSymbolizer stroke="COLOR" stroke-width="[width]" />
 <!--
 * Mapnik branch stroke-width-expr: replace by
