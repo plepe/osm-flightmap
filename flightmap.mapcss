@@ -156,7 +156,7 @@ node|z10-[aeroway=aerodrome],
 area|z10-[aeroway=aerodrome]
 {
   icon-image: img/aerodrome.svg;
-  text: eval(tag(iata, icao, faa, ref));
+  text: eval(tag(icao, iata, faa, ref));
   font-size: 16;
   text-color: #ff2aea;
   text-halo-radius: 2;
@@ -167,7 +167,7 @@ node|z12-[aeroway=helipad],
 area|z12-[aeroway=helipad]
 {
   icon-image: img/helipad.svg;
-  text: eval(tag(iata, icao, faa, ref));
+  text: eval(tag(icao, iata, faa, ref));
   font-size: 16;
   text-color: #ff2aea;
   text-halo-radius: 2;
