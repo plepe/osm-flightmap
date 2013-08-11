@@ -65,7 +65,7 @@ line|z7-[highway=trunk],
 line|z9-[highway=motorway_link],
 line|z9-[highway=trunk_link]
 {
-  z-index: 11;
+  z-index: eval(10.01+any(number(tag(layer)), "0")*0.1);
   width: 3;
   color: #ffffff;
 }
@@ -83,7 +83,7 @@ line|z7-[highway=trunk]::casing,
 line|z9-[highway=motorway_link]::casing,
 line|z9-[highway=trunk_link]::casing
 {
-  z-index: 10;
+  z-index: eval(10.00+any(number(tag(layer)), "0")*0.1);
   width: 6;
   color: #ff0000;
 }
@@ -96,7 +96,7 @@ line|z9-[railway=rail] {
 
 line[bridge]::casing
 {
-  color: #ff0000;
+  color: #7f0000;
 }
 
 line|z9-[power=line]
