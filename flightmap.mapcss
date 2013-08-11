@@ -20,60 +20,95 @@
   wrap-character: " ";
 }
 
-point[place] {
-  text: eval(concat('== ', tag(name), ' =='));
+point|z9-[place=city] {
+  text: eval(tag(name));
   text-halo-radius: 2;
   text-halo-fill: #ffffff;	// Mapnik >= version 3.0 or branch harfbuzz
 
   character-spacing: 1;
   text-opacity: 0.7;
 
-  z-index: 10;
+  z-index: 100;
 }
 
-area[building] {
-  fill-color: #707070;		// Mapnik >= version 3.0
-  width: 1;			// Mapnik >= version 3.0 or branch stroke-width-expr
-  color: #000000;		// Mapnik >= version 3.0
+line|z9-[highway=motorway],
+line|z9-[highway=trunk],
+line|z9-[highway=motorway_link],
+line|z9-[highway=trunk_link]
+{
+  z-index: 11;
+  width: 3;
+  color: #ffffff;
 }
 
-way|z11-::casing
+line|z9-[highway=primary],
+line|z9-[highway=secondary]
 {
-  z-index: -20;
-  object-z-index: -1;
-}
-way|z11-14[highway=primary]
-{
+  z-index: 5;
   width: 2;
   color: #ff0000;
 }
-way|z11-14[highway=primary]::casing
-{
-  width: 4;
-  color: #A0A0A0;
-}
 
-way|z15-[highway=primary]
+line|z9-[highway=motorway]::casing,
+line|z9-[highway=trunk]::casing,
+line|z9-[highway=motorway_link]::casing,
+line|z9-[highway=trunk_link]::casing
 {
-  width: 4;
+  z-index: 10;
+  width: 6;
   color: #ff0000;
 }
-way|z15-[highway=primary]::casing
-{
-  width: 7;
-  color: #A0A0A0;
-}
-way|z11-[bridge]::casing
-{
+
+line|z9-[railway=rail] {
+  z-index: 8;
+  width: 2;
   color: #000000;
 }
 
-way[highway=residential],
-way[highway=unclassified] {
-  set .minor_road;
-}
-way.minor_road {
-  width: 2;
+line[bridge]::casing
+{
   color: #ff0000;
-  z-index: -1;
+}
+
+line|z9-[power=line]
+{
+  z-index: 15;
+  width: 1;
+  color: #7f007f;
+}
+
+area|z9-[landuse=forest],
+area|z9-[natural=wood]
+{
+  fill-color: #72c063;
+  z-index: -30;
+}
+
+line|z9-[waterway=river]
+{
+  color: #0055ff;
+  width: 2;
+  z-index: -5;
+}
+
+area|z9-[natural=water],
+area|z9-[waterway=riverbank]
+{
+  fill-color: #0055ff;
+  z-index: -29;
+}
+
+area|z9-[landuse=residential]
+{
+  z-index: -27;
+  fill-color: #ffff00;
+  color: #ffff00;
+  width: 1;
+}
+
+area|z9-[landuse=residential]::casing
+{
+  z-index: -28;
+  color: #000000;
+  width: 2;
 }
