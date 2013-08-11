@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE Map>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over" background-color="#ffffff">
+  <Style name="pgmapcss">
+<!-- POLYGONS -->
+    <Rule>
+      <Filter>[fill-color] = '#000000'</Filter>
+      <PolygonSymbolizer fill="#000000" />
+    </Rule>
+    <Rule>
+      <Filter>[fill-color] = '#ffff00'</Filter>
+      <PolygonSymbolizer fill="#ffff00" />
+    </Rule>
+    <Rule>
+      <Filter>[fill-color] = '#ffffff'</Filter>
+      <PolygonSymbolizer fill="#ffffff" />
+    </Rule>
+    <Rule>
+      <Filter>[fill-color] = '#707070'</Filter>
+      <PolygonSymbolizer fill="#707070" />
+    </Rule>
+
+<!--
+* Mapnik version >= 3: replace by
+
+    <Rule>
+      <Filter>[fill-color]</Filter>
+      <PolygonSymbolizer fill="[fill-color]" fill-opacity="[fill-opacity]" />
+    </Rule>
+
+-->
+
+<!-- LINES -->
+    <Rule>
+      <Filter>[width] and [color] = '#000000'</Filter>
+      <LineSymbolizer stroke="#000000" stroke-width="[width]" />
+<!--
+* Mapnik branch stroke-width-expr: replace by
+      <LineSymbolizer stroke="#000000" stroke-width="[width]" />
+-->
+    </Rule>
+    <Rule>
+      <Filter>[width] and [color] = '#ffff00'</Filter>
+      <LineSymbolizer stroke="#ffff00" stroke-width="[width]" />
+<!--
+* Mapnik branch stroke-width-expr: replace by
+      <LineSymbolizer stroke="#ffff00" stroke-width="[width]" />
+-->
+    </Rule>
+    <Rule>
+      <Filter>[width] and [color] = '#ffffff'</Filter>
+      <LineSymbolizer stroke="#ffffff" stroke-width="[width]" />
+<!--
+* Mapnik branch stroke-width-expr: replace by
+      <LineSymbolizer stroke="#ffffff" stroke-width="[width]" />
+-->
+    </Rule>
+    <Rule>
+      <Filter>[width] and [color] = '#707070'</Filter>
+      <LineSymbolizer stroke="#707070" stroke-width="[width]" />
+<!--
+* Mapnik branch stroke-width-expr: replace by
+      <LineSymbolizer stroke="#707070" stroke-width="[width]" />
+-->
+    </Rule>
+<!--
+
+* Mapnik version >= 3: replace by
+
+    <Rule>
+      <Filter>[width] and [color]</Filter>
+      <LineSymbolizer stroke="[color]" stroke-width="[width]" stroke-opacity="[opacity]" stroke-linejoin="[linejoin]" stroke-linecap="[linecap]" stroke-dasharray="[dashes]" />
+    </Rule>
+-->
+
+<!-- TEXTS -->
+    <Rule>
+      <Filter>[text]</Filter>
+      <TextSymbolizer face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+    </Rule>
+  </Style>
+
+  <Layer name="layer" status="on" srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs +over">
+    <Datasource>
+      <Parameter name="type">postgis</Parameter>
+      <Parameter name="dbname">DB</Parameter>
+      <Parameter name="user">USER</Parameter>
+      <Parameter name="password">PASSWORD</Parameter>
+      <Parameter name="host">localhost</Parameter>
+      <Parameter name="estimate_extent">false</Parameter>
+      <Parameter name="extent">-20037508,-19929239,20037508,19929239</Parameter>
+      <Parameter name="geometry_field">_geo</Parameter>
+      <Parameter name="srid">900913</Parameter>
+      <Parameter name="table">
+test_match(pgmapcss_render_context(!bbox!, !scale_denominator!))
+      </Parameter>
+    </Datasource>
+    <StyleName>pgmapcss</StyleName>
+  </Layer>
+</Map>
