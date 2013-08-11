@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+  <style>
+body {
+  margin: 0;
+}
+#map {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 2em;
+  bottom: 0px;
+}
+  </style>
+  <!--[if lte IE 8]>
+      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+      <![endif]-->
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+  <script>
+var map;
+
+function init() {
+  map = L.map('map').setView([48, 15], 9);
+
+  // add an OpenStreetMap tile layer
+  L.tileLayer('/tiles/flightmap/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  map.on('move', update_pos);
+}
+
+function update_pos() {
+  var pos=document.getElementById('pos');
+
+  pos.innerHTML=map.getCenter().lat.toFixed(3)+" "+map.getCenter().lng.toFixed(3)+" z"+map.getZoom();
+}
+  </script>
+</head>
+<body onload='init()'>
+OSM Flightmap @ <span id='pos'></span>
+<div id='map'>
+</div>
+</body>
+</html>
