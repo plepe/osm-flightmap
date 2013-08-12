@@ -83,15 +83,19 @@
 # FOR COLORS COLOR
     <Rule>
       <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "0"</Filter>
-      <TextSymbolizer fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+      <TextSymbolizer wrap-width="128" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]">[text]</ExpressionFormat></TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "13"</Filter>
-      <TextSymbolizer dy="13" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+      <TextSymbolizer wrap-width="128" dy="13" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]">[text]</ExpressionFormat></TextSymbolizer>
+    </Rule>
+    <Rule>
+      <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "15"</Filter>
+      <TextSymbolizer wrap-width="128" dy="15" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]">[text]</ExpressionFormat></TextSymbolizer>
     </Rule>
     <Rule>
       <Filter>[text] and [text-color] = "COLOR" and [text-offset] = "17"</Filter>
-      <TextSymbolizer dy="17" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]" wrap-character="[wrap-character]">[text]</ExpressionFormat></TextSymbolizer>
+      <TextSymbolizer wrap-width="128" dy="17" fill="COLOR" face-name="DejaVu Sans Book"><ExpressionFormat size="[font-size]" halo-radius="[text-halo-radius]" character-spacing="[character-spacing]" opacity="[text-opacity]">[text]</ExpressionFormat></TextSymbolizer>
     </Rule>
 # END
 

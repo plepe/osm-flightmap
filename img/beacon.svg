@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="30"
-   height="25"
+   width="32"
+   height="27"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="Neues Dokument 1">
+   sodipodi:docname="beacon.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -25,8 +25,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="16.396038"
-     inkscape:cx="3.3464089"
-     inkscape:cy="17.730524"
+     inkscape:cx="4.2854186"
+     inkscape:cy="18.730533"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -47,8 +47,8 @@
        visible="true"
        enabled="true"
        snapvisiblegridlinesonly="true"
-       originx="-0.12134527px"
-       originy="-3.060283px" />
+       originx="0.87865477px"
+       originy="-2.0602734px" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -63,13 +63,37 @@
     </rdf:RDF>
   </metadata>
   <g
+     transform="translate(0.87865477,-1023.3017)"
+     id="g3800"
+     inkscape:groupmode="layer"
+     inkscape:label="Schatten"
+     style="display:inline">
+    <path
+       transform="matrix(0.89937115,0,0,0.89937115,0.51046271,1021.5124)"
+       d="M 23.382411,29.786712 8.6175879,29.786711 1.235177,16.999999 8.6175891,4.2132879 l 14.7648229,7e-7 7.382411,12.7867124 z"
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.5707963"
+       sodipodi:arg1="1.0471976"
+       sodipodi:r2="12.786712"
+       sodipodi:r1="14.764823"
+       sodipodi:cy="17"
+       sodipodi:cx="16"
+       sodipodi:sides="6"
+       id="path3802"
+       style="fill:none;stroke:#ffffff;stroke-width:4.4475522;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       sodipodi:type="star" />
+  </g>
+  <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-0.12134527,-1024.3017)">
+     transform="translate(0.87865477,-1023.3017)"
+     style="display:inline">
     <path
        sodipodi:type="star"
-       style="fill:none;fill-opacity:1;stroke:#ff5a00;stroke-opacity:1;stroke-width:2.22377602;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#ff5a00;stroke-width:2.2237761;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="path2999"
        sodipodi:sides="6"
        sodipodi:cx="16"
@@ -82,6 +106,6 @@
        inkscape:rounded="0"
        inkscape:randomized="0"
        d="M 23.382411,29.786712 8.6175879,29.786711 1.235177,16.999999 8.6175891,4.2132879 l 14.7648229,7e-7 7.382411,12.7867124 z"
-       transform="matrix(0.89937115,0,0,0.89937115,0.54536047,1021.6107)" />
+       transform="matrix(0.89937115,0,0,0.89937115,0.51046271,1021.5124)" />
   </g>
 </svg>

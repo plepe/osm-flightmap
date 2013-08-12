@@ -180,7 +180,7 @@ node|z11-[man_made=beacon]
   text: eval(tag(ref));
   text-color: #ff5a00;
   text-halo-radius: 1;
-  text-offset: 13;
+  text-offset: 15;
   z-index: 199;
 }
 
