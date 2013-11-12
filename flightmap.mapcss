@@ -1,28 +1,3 @@
-/* DEFAULT VALUES (and make sure that result columns are available) */
-* {
-// General
-  z-index: 0;
-// PolygonSymbolizer
-  fill-color: ;
-  fill-opacity: 1;
-// LineSymbolizer
-  width: ;
-  color: ;
-// TextSymbolizer
-  font-family: "DejaVu Sans Book"; // not working?
-  font-size: 12;
-  text-color: #000000;		// Mapnik >= version 3.0 or branch harfbuzz
-  text-halo-color: #ffffff;	// Mapnik >= version 3.0 or branch harfbuzz
-  text-opacity: 1;
-  text-halo-radius: 0;
-  // not in MapCSS 0.2 standard:
-  character-spacing: 0;
-  wrap-character: " ";
-  icon-image: ;
-  text-offset: 0;
-  linecap: ;
-}
-
 point|z5-8[place=city][population>10000000],
 point|z6-9[place=city][population>1000000],
 point|z7-10[place=city],
@@ -33,7 +8,7 @@ point|z13-[place=village][population>1000],
 point|z13-[place=village]
 {
   font-size: 16;
-  text: eval(tag(name));
+  text: name;
   text-halo-radius: 2;
   text-halo-fill: #ffffff;	// Mapnik >= version 3.0 or branch harfbuzz
 
@@ -51,7 +26,7 @@ point|z14-17[place=town][population>10000],
 point|z15-[place=town]
 {
   font-size: 20;
-  text: eval(tag(name));
+  text: name;
   text-halo-radius: 3;
   text-halo-fill: #ffffff;	// Mapnik >= version 3.0 or branch harfbuzz
 
@@ -66,10 +41,11 @@ line|z7-[highway=trunk],
 line|z9-[highway=motorway_link],
 line|z9-[highway=trunk_link]
 {
-  z-index: eval(10.01+any(number(tag(layer)), "0")*0.1);
   width: 3;
   color: #ffffff;
   linecap: round;
+  casing-width: 1.5;
+  casing-color: #ff0000;
 }
 
 line|z9-[highway=primary],
@@ -80,30 +56,19 @@ line|z9-[highway=secondary]
   color: #ff0000;
 }
 
-line|z7-[highway=motorway]::casing,
-line|z7-[highway=trunk]::casing,
-line|z9-[highway=motorway_link]::casing,
-line|z9-[highway=trunk_link]::casing
-{
-  z-index: eval(10.00+any(number(tag(layer)), "0")*0.1);
-  width: 6;
-  color: #ff0000;
-}
-
 line|z9-[railway=rail] {
   z-index: 8;
   width: 2;
   color: #000000;
 }
 
-line[bridge]::casing
+line[bridge]
 {
-  color: #7f0000;
+  casing-color: #7f0000;
 }
 
 line|z9-[power=line]
 {
-  z-index: 15;
   width: 1;
   color: #7f007f;
 }
@@ -112,42 +77,35 @@ area|z9-[landuse=forest],
 area|z9-[natural=wood]
 {
   fill-color: #72c063;
-  z-index: -30;
+  layer: -10;
 }
 
 line|z7-8[waterway=river]
 {
   color: #0055ff;
   width: 1;
-  z-index: -5;
 }
 line|z9-[waterway=river]
 {
   color: #0055ff;
   width: 2;
-  z-index: -5;
 }
 
 area|z6-[natural=water],
 area|z6-[waterway=riverbank]
 {
   fill-color: #0055ff;
-  z-index: -29;
+  layer: -10;
 }
 
 area|z9-[landuse=residential]
 {
-  z-index: -27;
   fill-color: #ffff00;
   color: #ffff00;
   width: 1;
-}
-
-area|z9-[landuse=residential]::casing
-{
-  z-index: -28;
-  color: #000000;
-  width: 2;
+  layer: -10;
+  casing-color: #000000;
+  casing-width: 1;
 }
 
 node|z8-[aeroway=aerodrome][type=public],
@@ -177,7 +135,7 @@ area|z12-[aeroway=helipad]
 node|z11-[man_made=beacon]
 {
   icon-image: img/beacon.svg;
-  text: eval(tag(ref));
+  text: ref;
   text-color: #ff5a00;
   text-halo-radius: 1;
   text-offset: 15;
